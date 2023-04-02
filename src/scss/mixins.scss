@@ -1,0 +1,9 @@
+@mixin text($weight: 400, $color) {
+  font-weight: $weight;
+  color: $color;
+  font-style: normal;
+}
+
+:export {
+    text: text;
+}

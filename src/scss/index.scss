@@ -1,0 +1,94 @@
+// importation of variables.scss
+@import './variables.scss';
+// importation of mixins.scss
+@import './mixins.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: $dark;
+    color: $light;
+}
+
+// HEADER SECTION
+
+.header {
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    .time{
+        @include text(700, $tertiary);
+    }
+    .tries{
+        @include text(700, $secondary);
+    }
+    .score{
+        @include text(700, $primary);
+    }
+}
+
+// CONTAINER SECTION
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    padding: 10px 30px;
+    .card_character{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: darken($color: $dark, $amount: 5);
+        border-radius: 10px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            transform: scale(1.1);
+        }
+        .character_name{
+            @include text(700, $tertiary);
+            margin-top: 10px;
+        }
+    }
+    .hidden{
+        img{
+            display: none;
+        }
+        .character_name{
+            display: none;
+        }
+        &::before{
+            content: "?";
+            font-size: 5rem;
+            color: $primary;
+        }
+    }
+    .show{
+        img{
+            display: block;
+        }
+        .character_name{
+            display: block;
+        }
+        &::before{
+            content: "";
+        }
+    }
+    .selected{
+        background: $primary;
+        color: $dark;
+        transform: scale(1.1);
+    }
+}

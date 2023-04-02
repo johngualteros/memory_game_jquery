@@ -1,0 +1,103 @@
+:export {
+  dark: #17122d;
+  light: #fff;
+  primary: #a3ecfb;
+  secondary: #68dca0;
+  tertiary: #6f74de;
+}
+
+:export {
+  text: text;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #17122d;
+  color: #fff;
+}
+
+.header {
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.header .time {
+  font-weight: 700;
+  color: #6f74de;
+  font-style: normal;
+}
+.header .tries {
+  font-weight: 700;
+  color: #68dca0;
+  font-style: normal;
+}
+.header .score {
+  font-weight: 700;
+  color: #a3ecfb;
+  font-style: normal;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding: 10px 30px;
+}
+.container .card_character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #0e0b1b;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.container .card_character:hover {
+  transform: scale(1.1);
+}
+.container .card_character .character_name {
+  font-weight: 700;
+  color: #6f74de;
+  font-style: normal;
+  margin-top: 10px;
+}
+.container .hidden img {
+  display: none;
+}
+.container .hidden .character_name {
+  display: none;
+}
+.container .hidden::before {
+  content: "?";
+  font-size: 5rem;
+  color: #a3ecfb;
+}
+.container .show img {
+  display: block;
+}
+.container .show .character_name {
+  display: block;
+}
+.container .show::before {
+  content: "";
+}
+.container .selected {
+  background: #a3ecfb;
+  color: #17122d;
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=index.css.map */
